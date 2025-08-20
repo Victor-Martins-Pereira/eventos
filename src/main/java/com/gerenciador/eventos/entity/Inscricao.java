@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Entity
     @Table (name = "inscricao")
-public class Inscricoes {
+public class Inscricao {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO,generator = "UUID")
         @Column(nullable = false,updatable = false)
@@ -25,10 +25,10 @@ public class Inscricoes {
         @JoinColumn(name = "usuario_id", nullable = false)
         private Usuario usuario;
 
-        public Inscricoes() {
+        public Inscricao() {
         }
 
-        public Inscricoes(UUID id, com.gerenciador.eventos.entity.StatusPagamento statusPagamento, LocalDateTime dataHora, LocalDateTime created_at, LocalDateTime updated_at, Evento evento, Usuario usuario) {
+        public Inscricao(UUID id, com.gerenciador.eventos.entity.StatusPagamento statusPagamento, LocalDateTime dataHora, LocalDateTime created_at, LocalDateTime updated_at, Evento evento, Usuario usuario) {
                 this.id = id;
                 StatusPagamento = statusPagamento;
                 this.dataHora = dataHora;

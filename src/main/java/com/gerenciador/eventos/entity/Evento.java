@@ -31,7 +31,7 @@ public class Evento {
     private LocalDateTime updated_at;
 
     @OneToMany(mappedBy = "evento")
-    private List<Inscricoes>inscricoes;
+    private List<Inscricao>inscricoes;
 
     public Evento() {
     }
@@ -138,11 +138,11 @@ public class Evento {
         this.updated_at = updated_at;
     }
 
-    public List<Inscricoes> getInscricoes() {
+    public List<Inscricao> getInscricoes() {
         return inscricoes;
     }
 
-    public void setInscricoes(List<Inscricoes> inscricoes) {
+    public void setInscricoes(List<Inscricao> inscricoes) {
         this.inscricoes = inscricoes;
     }
 }
