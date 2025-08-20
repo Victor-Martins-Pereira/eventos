@@ -1,0 +1,37 @@
+package com.gerenciador.eventos.cotroller;
+
+import com.gerenciador.eventos.dto.UsuarioCreateDTO;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.UUID;
+
+@RestController
+@RequestMapping ("/api/v1/usuario")
+public class UsuariosController {
+
+    @GetMapping("/{id}")
+    public UsuarioCreateDTO findById (@PathVariable("id")UUID id){
+        return service.findById(id);
+    }
+
+    @GetMapping
+    public List<UsuarioCreateDTO> findAll(){
+        return service.findAll();
+    }
+
+    @PostMapping
+    public UsuarioCreateDTO save(@RequestBody UsuarioCreateDTO usuarioCreateDTO){
+        return service.save(usuarioCreateDTO);
+    }
+
+    @PutMapping ("/{id}")
+    public UsuarioCreateDTO update(@PathVariable("id") UUID id, @RequestBody UsuarioCreateDTO usuarioCreateDTO){
+        return service.update(id, usuarioCreateDTO);
+    }
+
+    @DeleteMapping ("/{id}")
+    public void deleteById (@PathVariable("id") UUID id){
+        service.deleteById(id);
+    }
+}

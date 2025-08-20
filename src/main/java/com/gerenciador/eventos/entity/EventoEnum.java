@@ -1,7 +1,7 @@
 package com.gerenciador.eventos.entity;
 
 public enum EventoEnum {
-    CONGRSSO,
+    CONGRESSO,
     TREINAMENTO,
     WORKSHOP,
     IMERSÃO,

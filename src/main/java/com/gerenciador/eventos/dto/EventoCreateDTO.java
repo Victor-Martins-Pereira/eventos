@@ -1,64 +1,33 @@
-package com.gerenciador.eventos.entity;
+package com.gerenciador.eventos.dto;
 
-import ch.qos.logback.core.testUtil.DummyEncoder;
-import jakarta.persistence.*;
+import com.gerenciador.eventos.entity.EventoEnum;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.UUID;
 
-@Entity //Dizer para o SPRING é uma entidade
-@Table (name = "evento")
-public class Evento {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO,generator = "UUID")
-    @Column(nullable = false,updatable = false)
-    private UUID id;
-    @Column (nullable = false)
+public class EventoCreateDTO {
     private String nome;
     private String descricao;
-    @Enumerated(EnumType.STRING)
-    @Column (nullable = false)
     private EventoEnum tipo;
-    @Column (nullable = false)
     private String local;
-    private double precoEvento;
-    @Column (nullable = false)
     private LocalDateTime dataInicio;
-    @Column (nullable = false)
     private LocalDateTime dataFinal;
     private String link_evento;
     private String link_imagem;
-    private LocalDateTime created_at;
+    private LocalDateTime created_at ;
     private LocalDateTime updated_at;
 
-    @OneToMany(mappedBy = "evento")
-    private List<Inscricao>inscricoes;
-
-    public Evento() {
+    public EventoCreateDTO() {
     }
 
-    public Evento(UUID id, String nome, String descricao, EventoEnum tipo, String local, double precoEvento, LocalDateTime dataInicio, LocalDateTime dataFinal, String link_evento, String link_imagem, LocalDateTime created_at, LocalDateTime updated_at) {
-        this.id = id;
+    public EventoCreateDTO(String nome, String descricao, EventoEnum tipo, String local, LocalDateTime dataInicio, LocalDateTime dataFinal, String link_evento, String link_imagem, LocalDateTime created_at, LocalDateTime updated_at) {
         this.nome = nome;
         this.descricao = descricao;
         this.tipo = tipo;
         this.local = local;
-        this.precoEvento = precoEvento;
         this.dataInicio = dataInicio;
         this.dataFinal = dataFinal;
         this.link_evento = link_evento;
         this.link_imagem = link_imagem;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
     }
 
     public String getNome() {
@@ -141,19 +110,8 @@ public class Evento {
         this.updated_at = updated_at;
     }
 
-    public List<Inscricao> getInscricoes() {
-        return inscricoes;
-    }
-
-    public void setInscricoes(List<Inscricao> inscricoes) {
-        this.inscricoes = inscricoes;
-    }
-
-    public double getPrecoEvento() {
-        return precoEvento;
-    }
-
-    public void setPrecoEvento(double precoEvento) {
-        this.precoEvento = precoEvento;
+    {
+        this.created_at = LocalDateTime.now();
+        this.updated_at = LocalDateTime.now();
     }
 }
