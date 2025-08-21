@@ -1,6 +1,7 @@
 package com.gerenciador.eventos.cotroller;
 
 import com.gerenciador.eventos.dto.EventoCreateDTO;
+import com.gerenciador.eventos.service.EventoService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -8,8 +9,9 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping ("/api/v1/evento")      // localhost:8080/api/v1/evento
-
 public class EventoController {
+
+    EventoService service;
 
     //PEGAR EVENTO PELO ID
     @GetMapping ("/{id}")

@@ -1,6 +1,8 @@
 package com.gerenciador.eventos.cotroller;
 
 import com.gerenciador.eventos.dto.UsuarioCreateDTO;
+import com.gerenciador.eventos.entity.Usuario;
+import com.gerenciador.eventos.service.UsuarioService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,6 +11,8 @@ import java.util.UUID;
 @RestController
 @RequestMapping ("/api/v1/usuario")
 public class UsuariosController {
+
+    UsuarioService service;
 
     @GetMapping("/{id}")
     public UsuarioCreateDTO findById (@PathVariable("id")UUID id){

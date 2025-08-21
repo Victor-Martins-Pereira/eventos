@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class UsuarioCreateDTO {
         private String email;
-        private String senha;
+//        private String senha;
         private String nome;
         private String telefone;
         private String cpf;
@@ -19,9 +19,9 @@ public class UsuarioCreateDTO {
     public UsuarioCreateDTO() {
     }
 
-    public UsuarioCreateDTO(String email, String senha, String nome, String telefone, String cpf, TipoUsuario tipo, Date data_nascimento) {
+    public UsuarioCreateDTO(String email, String nome, String telefone, String cpf, TipoUsuario tipo, Date data_nascimento) {
         this.email = email;
-        this.senha = senha;
+//        this.senha = senha;
         this.nome = nome;
         this.telefone = telefone;
         this.cpf = cpf;
@@ -42,13 +42,13 @@ public class UsuarioCreateDTO {
         this.email = email;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+//    public String getSenha() {
+//        return senha;
+//    }
+//
+//    public void setSenha(String senha) {
+//        this.senha = senha;
+//    }
 
     public String getNome() {
         return nome;

@@ -1,6 +1,8 @@
 package com.gerenciador.eventos.cotroller;
 
 import com.gerenciador.eventos.dto.InscricaoCreateDTO;
+import com.gerenciador.eventos.entity.Inscricao;
+import com.gerenciador.eventos.service.InscricaoService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,6 +11,8 @@ import java.util.UUID;
 @RestController
 @RequestMapping ("/api/v1/inscricao")
 public class InscricaoController {
+
+    InscricaoService service;
 
     //PEGAR INSCRIÇÃO PELO ID
     @GetMapping("/{id}")
