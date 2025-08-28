@@ -1,7 +1,7 @@
 package com.gerenciador.eventos.cotroller;
 
 import com.gerenciador.eventos.dto.UsuarioCreateDTO;
-import com.gerenciador.eventos.entity.Usuario;
+import com.gerenciador.eventos.dto.UsuarioCreateIdDTO;
 import com.gerenciador.eventos.service.UsuarioService;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,12 +15,12 @@ public class UsuariosController {
     UsuarioService service;
 
     @GetMapping("/{id}")
-    public UsuarioCreateDTO findById (@PathVariable("id")UUID id){
+    public UsuarioCreateIdDTO findById (@PathVariable("id")UUID id){
         return service.findById(id);
     }
 
     @GetMapping
-    public List<UsuarioCreateDTO> findAll(){
+    public List<UsuarioCreateIdDTO> findAll(){
         return service.findAll();
     }
 
@@ -37,5 +37,9 @@ public class UsuariosController {
     @DeleteMapping ("/{id}")
     public void deleteById (@PathVariable("id") UUID id){
         service.deleteById(id);
+    }
+
+    public UsuariosController(UsuarioService service) {
+        this.service = service;
     }
 }

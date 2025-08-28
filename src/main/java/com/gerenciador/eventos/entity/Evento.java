@@ -4,6 +4,7 @@ import ch.qos.logback.core.testUtil.DummyEncoder;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -24,9 +25,9 @@ public class Evento {
     private String local;
     private double precoEvento;
     @Column (nullable = false)
-    private LocalDateTime dataInicio;
+    private Date dataInicio;
     @Column (nullable = false)
-    private LocalDateTime dataFinal;
+    private Date dataFinal;
     private String link_evento;
     private String link_imagem;
     private LocalDateTime created_at;
@@ -38,7 +39,7 @@ public class Evento {
     public Evento() {
     }
 
-    public Evento(UUID id, String nome, String descricao, EventoEnum tipo, String local, double precoEvento, LocalDateTime dataInicio, LocalDateTime dataFinal, String link_evento, String link_imagem, LocalDateTime created_at, LocalDateTime updated_at) {
+    public Evento(UUID id, String nome, String descricao, EventoEnum tipo, String local, double precoEvento, Date dataInicio, Date dataFinal, String link_evento, String link_imagem, LocalDateTime created_at, LocalDateTime updated_at) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
@@ -93,19 +94,19 @@ public class Evento {
         this.local = local;
     }
 
-    public LocalDateTime getDataInicio() {
+    public Date getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInicio(LocalDateTime dataInicio) {
+    public void setDataInicio(Date dataInicio) {
         this.dataInicio = dataInicio;
     }
 
-    public LocalDateTime getDataFinal() {
+    public Date getDataFinal() {
         return dataFinal;
     }
 
-    public void setDataFinal(LocalDateTime dataFinal) {
+    public void setDataFinal(Date dataFinal) {
         this.dataFinal = dataFinal;
     }
 

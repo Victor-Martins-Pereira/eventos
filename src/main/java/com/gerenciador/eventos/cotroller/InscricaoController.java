@@ -1,7 +1,6 @@
 package com.gerenciador.eventos.cotroller;
 
 import com.gerenciador.eventos.dto.InscricaoCreateDTO;
-import com.gerenciador.eventos.entity.Inscricao;
 import com.gerenciador.eventos.service.InscricaoService;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,10 +13,14 @@ public class InscricaoController {
 
     InscricaoService service;
 
+    public InscricaoController(InscricaoService service) {
+        this.service = service;
+    }
+
     //PEGAR INSCRIÇÃO PELO ID
     @GetMapping("/{id}")
     public InscricaoCreateDTO findById (@PathVariable("id")UUID id){
-        return service.findById;
+        return service.findById(id);
     }
     //PEGAR TODOS AS INSCRIÇÕES
     @GetMapping

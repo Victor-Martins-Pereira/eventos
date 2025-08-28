@@ -4,24 +4,25 @@ import com.gerenciador.eventos.entity.TipoUsuario;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.UUID;
 
-public class UsuarioCreateDTO {
-        private String email;
-        private String senha;
-        private String nome;
-        private String telefone;
-        private String cpf;
-        private TipoUsuario tipo;
-        private Date data_nascimento;
-        private LocalDateTime created_at ;
-        private LocalDateTime updated_at;
+public class UsuarioCreateIdDTO {
+    private UUID id;
+    private String email;
+    private String nome;
+    private String telefone;
+    private String cpf;
+    private TipoUsuario tipo;
+    private Date data_nascimento;
+    private LocalDateTime created_at ;
+    private LocalDateTime updated_at;
 
-    public UsuarioCreateDTO() {
+    public UsuarioCreateIdDTO() {
     }
 
-    public UsuarioCreateDTO(String email, String nome, String telefone, String cpf, TipoUsuario tipo, Date data_nascimento) {
+    public UsuarioCreateIdDTO(UUID id, String email, String nome, String telefone, String cpf, TipoUsuario tipo, Date data_nascimento) {
+        this.id = id;
         this.email = email;
-        this.senha = senha;
         this.nome = nome;
         this.telefone = telefone;
         this.cpf = cpf;
@@ -29,9 +30,12 @@ public class UsuarioCreateDTO {
         this.data_nascimento = data_nascimento;
     }
 
-    {
-        this.created_at = LocalDateTime.now();
-        this.updated_at = LocalDateTime.now();
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getEmail() {
@@ -40,14 +44,6 @@ public class UsuarioCreateDTO {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 
     public String getNome() {

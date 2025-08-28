@@ -10,6 +10,9 @@ import java.util.UUID;
 @RestController
 @RequestMapping ("/api/v1/evento")      // localhost:8080/api/v1/evento
 public class EventoController {
+    public EventoController(EventoService service) {
+        this.service = service;
+    }
 
     EventoService service;
 

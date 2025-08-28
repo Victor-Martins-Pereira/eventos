@@ -5,15 +5,17 @@ import com.gerenciador.eventos.entity.StatusPagamento;
 import com.gerenciador.eventos.entity.Usuario;
 
 import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.UUID;
 
 public class InscricaoCreateDTO {
 
   private StatusPagamento statusPagamento;
-  private LocalDateTime dataHora;
-  private Evento evento;
-  private Usuario usuario;
+  private Date dataHora;
+  private UUID evento;
+  private UUID usuario;
 
-    public InscricaoCreateDTO(StatusPagamento statusPagamento, LocalDateTime dataHora, Evento evento, Usuario usuario) {
+    public InscricaoCreateDTO(StatusPagamento statusPagamento, Date dataHora, UUID evento, UUID usuario) {
         this.statusPagamento = statusPagamento;
         this.dataHora = dataHora;
         this.evento = evento;
@@ -31,27 +33,27 @@ public class InscricaoCreateDTO {
         this.statusPagamento = statusPagamento;
     }
 
-    public LocalDateTime getDataHora() {
+    public Date getDataHora() {
         return dataHora;
     }
 
-    public void setDataHora(LocalDateTime dataHora) {
+    public void setDataHora(Date dataHora) {
         this.dataHora = dataHora;
     }
 
-    public Evento getEvento() {
+    public UUID getEvento() {
         return evento;
     }
 
-    public void setEvento(Evento evento) {
+    public void setEvento(UUID evento) {
         this.evento = evento;
     }
 
-    public Usuario getUsuario() {
+    public UUID getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(UUID usuario) {
         this.usuario = usuario;
     }
 }

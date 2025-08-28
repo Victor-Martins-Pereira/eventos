@@ -3,14 +3,18 @@ package com.gerenciador.eventos.dto;
 import com.gerenciador.eventos.entity.EventoEnum;
 
 import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.UUID;
 
 public class EventoCreateDTO {
+
+    private UUID id;
     private String nome;
     private String descricao;
     private EventoEnum tipo;
     private String local;
-    private LocalDateTime dataInicio;
-    private LocalDateTime dataFinal;
+    private Date dataInicio;
+    private Date dataFinal;
     private String link_evento;
     private String link_imagem;
     private LocalDateTime created_at ;
@@ -19,7 +23,8 @@ public class EventoCreateDTO {
     public EventoCreateDTO() {
     }
 
-    public EventoCreateDTO(String nome, String descricao, EventoEnum tipo, String local, LocalDateTime dataInicio, LocalDateTime dataFinal, String link_evento, String link_imagem, LocalDateTime created_at, LocalDateTime updated_at) {
+    public EventoCreateDTO(UUID id, String nome, String descricao, EventoEnum tipo, String local, Date dataInicio, Date dataFinal, String link_evento, String link_imagem) {
+        this.id = id;
         this.nome = nome;
         this.descricao = descricao;
         this.tipo = tipo;
@@ -62,19 +67,19 @@ public class EventoCreateDTO {
         this.local = local;
     }
 
-    public LocalDateTime getDataInicio() {
+    public Date getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInicio(LocalDateTime dataInicio) {
+    public void setDataInicio(Date dataInicio) {
         this.dataInicio = dataInicio;
     }
 
-    public LocalDateTime getDataFinal() {
+    public Date getDataFinal() {
         return dataFinal;
     }
 
-    public void setDataFinal(LocalDateTime dataFinal) {
+    public void setDataFinal(Date dataFinal) {
         this.dataFinal = dataFinal;
     }
 
@@ -108,6 +113,14 @@ public class EventoCreateDTO {
 
     public void setUpdated_at(LocalDateTime updated_at) {
         this.updated_at = updated_at;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     {

@@ -3,6 +3,7 @@ package com.gerenciador.eventos.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -13,7 +14,7 @@ public class Inscricao {
         @Column(nullable = false,updatable = false)
         private UUID id;
         private StatusPagamento StatusPagamento;
-        private LocalDateTime dataHora;
+        private Date dataHora;
         private LocalDateTime created_at;
         private LocalDateTime updated_at;
 
@@ -28,7 +29,7 @@ public class Inscricao {
         public Inscricao() {
         }
 
-        public Inscricao(UUID id, com.gerenciador.eventos.entity.StatusPagamento statusPagamento, LocalDateTime dataHora, LocalDateTime created_at, LocalDateTime updated_at, Evento evento, Usuario usuario) {
+        public Inscricao(UUID id, com.gerenciador.eventos.entity.StatusPagamento statusPagamento, Date dataHora, LocalDateTime created_at, LocalDateTime updated_at, Evento evento, Usuario usuario) {
                 this.id = id;
                 StatusPagamento = statusPagamento;
                 this.dataHora = dataHora;
@@ -54,11 +55,11 @@ public class Inscricao {
                 StatusPagamento = statusPagamento;
         }
 
-        public LocalDateTime getDataHora() {
+        public Date getDataHora() {
                 return dataHora;
         }
 
-        public void setDataHora(LocalDateTime dataHora) {
+        public void setDataHora(Date dataHora) {
                 this.dataHora = dataHora;
         }
 
